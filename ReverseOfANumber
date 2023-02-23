@@ -1,0 +1,50 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int reverseNumber(int no)
+{
+	int revno = 0;
+	int tmpno = no;
+	int digitcount = 0;
+	while (tmpno > 0)
+	{
+		tmpno = tmpno / 10;
+		digitcount++;
+	}
+
+	while (no>0)
+	{
+		int rem = no % 10;
+		no = no / 10;
+
+		int powerOfTen = 1;
+		for (int j=0;j<digitcount-1;j++)
+		{
+			powerOfTen *= 10;
+		}
+
+		revno += rem * powerOfTen;
+		digitcount--;
+	}
+  
+  
+  
+  int main()
+{
+
+
+	int no;
+	cin >> no;
+	cout << "reverse of a number is " << reverseNumber(no) << endl;
+  
+  
+  return 0;
+  
+}
+
+
+	
+	return revno;
+
+}
