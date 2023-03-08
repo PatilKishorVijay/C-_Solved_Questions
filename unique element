@@ -1,0 +1,28 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+
+
+int findUnique(vector<int>arr, int size)
+{
+	int ans = arr[0];
+	for (int i = 1; i < arr.size(); i++)
+	{
+		ans = ans ^ arr[i];
+	}
+
+	return ans;
+}
+
+int main()
+{
+	int n;
+	cout << "enter number of elements \n";
+	cin >> n;
+	vector<int>arr(n);
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];
+	cout << findUnique(arr, n) << endl;;
+
+}
